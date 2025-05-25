@@ -126,7 +126,108 @@ function App() {
           </div>
         </div>
       </section>
-      {/* ... other sections like "Quienes Somos", "Contacto" will go here ... */}
+
+      {/* Quienes Somos Section */}
+      <section id="about" className="py-16 md:py-24 bg-white">
+        <div className="container px-4 mx-auto">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+              ¿Quiénes Somos?
+            </h2>
+          </div>
+          <div className="max-w-3xl mx-auto text-slate-600 text-lg space-y-6">
+            <p>
+              Somos un Centro de Bienestar Emocional que proporciona espacios virtuales y servicio adecuados a personas, parejas, familias, colegios e institucionales que quieran fomentar y mantener un equilibrio y bienestar emocional, generando así el mejoramiento en su calidad de vida.
+            </p>
+            <p>
+              Brindamos las herramientas adecuadas que fortalezcan la capacidad de realizar actividades cotidianas, toma de decisiones, resolución de conflictos, comunicación asertiva, y todas las habilidades sociales.
+            </p>
+            <p>
+              Centro Alarcón ofrece acompañamiento en la Educación Especial y en los procesos de adaptación utilizando estrategias diseñadas para satisfacer las necesidades educativas de los niños, niñas, adolescentes y adultos con discapacidades y necesidades especiales, con el objetivo de facilitar el acceso a una educación inclusiva y mejoramiento de la calidad de vida.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-16 md:py-24 bg-slate-50">
+        <div className="container px-4 mx-auto">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+              Contacto
+            </h2>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+              Estamos aquí para ayudarte. Contáctanos para más información sobre nuestros servicios.
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+            {/* Contact Information */}
+            <div className="space-y-6">
+              <h3 className="text-xl font-semibold text-slate-700 mb-4">
+                Información de Contacto
+              </h3>
+              
+              <div className="flex items-center space-x-3">
+                <div className="text-green-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <span className="text-slate-600">+57 316 621 1524</span>
+              </div>
+
+              <div className="flex items-center space-x-3">
+                <div className="text-blue-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <span className="text-slate-600">lauraalarcon1692@gmail.com</span>
+              </div>
+
+              <div className="flex items-center space-x-3">
+                <div className="text-purple-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+                </div>
+                <span className="text-slate-600">Atención virtual las 24 horas</span>
+              </div>
+            </div>
+
+            {/* CTA Section */}
+            <div className="bg-white p-8 rounded-lg shadow-lg">
+              <h3 className="text-xl font-semibold text-slate-700 mb-4">
+                ¿Listo para comenzar?
+              </h3>
+              <p className="text-slate-600 mb-6">
+                Reserva tu cita ahora y comienza tu camino hacia el bienestar emocional.
+              </p>
+              <Button
+                className="w-full bg-[#25D366] hover:bg-[#128C7E] text-white px-6 py-3 rounded-full flex items-center justify-center space-x-2 transition-all duration-300 cursor-pointer"
+                onClick={() => window.open('https://api.whatsapp.com/send?phone=573166211524&text=Hola%20quiero%20una%20cita', '_blank')}
+              >
+                <img src="/wtp_logo.svg" alt="WhatsApp" className="w-5 h-5" />
+                <span>Contactar por WhatsApp</span>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-slate-800 text-white py-8">
+        <div className="container px-4 mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="flex items-center space-x-2 mb-4 md:mb-0">
+              <img src="/main_logo.png" alt="Alarcon CBE Logo" className="w-32" />
+            </div>
+            <div className="text-center md:text-right">
+              <p className="text-slate-400 text-sm">
+                {new Date().getFullYear()} Centro Alarcón CBE. Todos los derechos reservados.
+              </p>
+              <p className="text-slate-400 text-sm mt-1">
+                Bienestar emocional y desarrollo personal
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }
