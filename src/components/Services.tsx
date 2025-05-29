@@ -1,39 +1,39 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Users, Calendar, Check } from "lucide-react";
+import { Check, Heart, Leaf, User } from "lucide-react";
 
 const Services = () => {
   const services = [
     {
-      icon: <Users className="w-8 h-8 text-teal-600" />,
-      title: "Terapia para Autismo",
-      description: "Intervenciones especializadas para niños y adultos autistas",
+      icon: <Leaf className="w-8 h-8 text-teal-600" />,
+      title: "Educación Especial e Inclusiva",
+      description: "Caminamos contigo hacia la inclusión",
       features: [
-        "Evaluación integral del desarrollo",
-        "Terapia conductual aplicada (ABA)",
-        "Desarrollo de habilidades sociales",
-        "Programas de comunicación aumentativa"
+        "Estrategias personalizadas para niños, niñas y adolescentes con necesidades educativas especiales",
+        "Apoyo a colegios y familias para crear entornos inclusivos",
+        "Acompañamiento emocional en procesos de adaptación escolar",
+        "Actividades que promueven el desarrollo integral desde el respeto y la empatía",
       ]
     },
     {
-      icon: <Calendar className="w-8 h-8 text-blue-600" />,
-      title: "Programas de Bienestar Individual",
-      description: "Planes personalizados para el desarrollo integral",
+      icon: <Heart className="w-8 h-8 text-blue-600" />,
+      title: "Terapia de Pareja y Familiar",
+      description: "Donde la comunicación sana fortalece los lazos",
       features: [
-        "Terapia ocupacional especializada",
-        "Desarrollo de habilidades de vida diaria",
-        "Programas de regulación sensorial",
-        "Apoyo en transiciones de vida"
+        "Espacios seguros para dialogar, comprenderse y sanar",
+        "Herramientas para mejorar la comunicación en pareja y en familia",
+        "Apoyo en momentos de crisis, duelos o cambios importantes",
+        "Intervención desde el respeto y la empatía"
       ]
     },
     {
-      icon: <Check className="w-8 h-8 text-purple-600" />,
-      title: "Apoyo Familiar",
-      description: "Acompañamiento integral para toda la familia",
+      icon: <User className="w-8 h-8 text-purple-600" />,
+      title: "Acompañamiento Individual",
+      description: "Te escuchamos, te cuidamos, te acompañamos",
       features: [
-        "Orientación y consejería familiar",
-        "Talleres para padres y cuidadores",
-        "Estrategias de manejo en el hogar",
-        "Grupos de apoyo comunitario"
+        "Sesiones personalizadas para trabajar emociones, ansiedad o autoestima",
+        "Estrategias de afrontamiento para momentos difíciles",
+        "Acompañamiento respetuoso desde la infancia hasta la adultez",
+        "Espacios de confianza para conectar contigo mismo"
       ]
     }
   ];
@@ -46,8 +46,9 @@ const Services = () => {
             Nuestros Servicios Especializados
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Ofrecemos un enfoque integral y personalizado para apoyar el desarrollo 
-            y bienestar de personas autistas y sus familias.
+            Ofrecemos espacios seguros, amorosos y profesionales donde las emociones pueden ser expresadas, comprendidas y transformadas. 
+            <br />
+            Nuestro equipo interdisciplinario se especializa en el trabajo con niños, adolescentes, adultos, familias y parejas, adaptando cada intervención a sus necesidades particulares.
           </p>
         </div>
 

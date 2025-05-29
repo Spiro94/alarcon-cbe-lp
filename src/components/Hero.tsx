@@ -35,17 +35,19 @@ const Hero = () => {
 
         {/* Main headline */}
         <h1 className="text-4xl md:text-6xl font-bold text-gray-800 mb-6 animate-fade-in">
-          Transformando vidas a través del
-          <span className="block bg-gradient-to-r from-teal-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">
-            bienestar emocional
+          Acompañando vidas desde el amor
+         <span className="block">
+            y el <span className="bg-gradient-to-r from-teal-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">bienestar emocional</span>
           </span>
         </h1>
 
         {/* Subheadline */}
         <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in">
-          En Alarcón CBE ofrecemos terapias especializadas para niños y adultos autistas, 
-          junto con programas personalizados de bienestar que fortalecen habilidades, 
-          mejoran la comunicación y elevan la calidad de vida de toda la familia.
+          En Alarcón CBE brindamos acompañamiento terapéutico para 
+          niños, adolescentes, adultos, parejas y familias, 
+          con un enfoque cálido, personalizado e inclusivo. 
+          Creamos espacios seguros para fortalecer habilidades, 
+          gestionar emociones, mejorar vínculos y florecer desde el interior.
         </p>
 
         {/* CTA buttons */}

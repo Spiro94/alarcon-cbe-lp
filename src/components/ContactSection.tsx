@@ -26,7 +26,7 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Create mailto URL with form data
     const subject = encodeURIComponent("Consulta desde sitio web");
     const body = encodeURIComponent(
@@ -34,15 +34,15 @@ const ContactSection = () => {
       `Teléfono: ${formData.phone}\n\n` +
       `Mensaje:\n${formData.message}`
     );
-    const mailtoURL = `mailto:lauraalarcon1692@gmail.com?subject=${subject}&body=${body}`;
-    
+    const mailtoURL = `mailto:alarconcbe@gmail.com?subject=${subject}&body=${body}`;
+
     // Open email client
     window.location.href = mailtoURL;
-    
+
     toast.success("Abriendo cliente de correo", {
       description: "Se abrirá tu aplicación de correo con el mensaje pre-lleno.",
     });
-    
+
     setFormData({ name: '', email: '', phone: '', message: '' });
   };
 
@@ -61,7 +61,7 @@ const ContactSection = () => {
             Comienza tu Camino hacia el Bienestar
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Estamos aquí para acompañarte. Agenda tu consulta inicial 
+            Estamos aquí para acompañarte. Agenda tu consulta inicial
             y descubre cómo podemos apoyar a tu familia.
           </p>
         </div>
@@ -84,7 +84,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-800 mb-1">Email</h4>
-                  <p className="text-gray-600">info@alarconcbe.com</p>
+                  <p className="text-gray-600">alarconcbe@gmail.com</p>
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-800 mb-1">Horarios de Atención</h4>
@@ -97,16 +97,16 @@ const ContactSection = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold mb-4">¿Listo para dar el primer paso?</h3>
                 <p className="mb-6 opacity-90">
-                  Programa tu consulta inicial y descubre cómo podemos 
+                  Programa tu consulta inicial y descubre cómo podemos
                   ayudarte a alcanzar tus objetivos de bienestar.
                 </p>
-                <Button 
+                <Button
                   className="bg-white text-teal-600 hover:bg-gray-100 font-semibold cursor-pointer"
                   onClick={handleWhatsAppContact}
                 >
                   <img
-                  src="/logo_wtp_green.svg" className="h-6"/>
-                 Contactar por WhatsApp
+                    src="/logo_wtp_green.svg" className="h-6" />
+                  Contactar por WhatsApp
                 </Button>
               </CardContent>
             </Card>
@@ -165,8 +165,8 @@ const ContactSection = () => {
                     placeholder="Cuéntanos sobre tu situación y cómo podemos ayudarte..."
                   />
                 </div>
-                <Button 
-                  type="submit" 
+                <Button
+                  type="submit"
                   className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 cursor-pointer"
                 >
                   Enviar Mensaje

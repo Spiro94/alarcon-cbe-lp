@@ -16,7 +16,7 @@ const Testimonials = () => {
     },
     {
       name: "Ana Sofía Ruiz",
-      role: "Adulta autista, 25 años",
+      role: "Adulta, 25 años",
       content: "Gracias a los programas de Alarcón CBE he desarrollado habilidades que me han permitido ser más independiente. El enfoque personalizado y respetuoso hace toda la diferencia.",
       rating: 5
     }
@@ -72,7 +72,7 @@ const Testimonials = () => {
           <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-teal-50 to-blue-50 px-6 py-3 rounded-full">
             <span className="text-2xl">⭐</span>
             <span className="font-semibold text-gray-800">4.9/5</span>
-            <span className="text-gray-600">• Más de 200 familias atendidas</span>
+            <span className="text-gray-600">• Más de 20 familias atendidas</span>
           </div>
         </div>
       </div>

@@ -17,7 +17,15 @@ function App() {
       <Testimonials />
       <ContactSection />
       <Footer />
-      <Toaster />
+      <Toaster
+        toastOptions={{
+          style: {
+            background: '#0f766e',
+            color: '#ffffff',
+            border: '1px solid #14b8a6'
+          }
+        }}
+      />
     </div>
   )
 }
