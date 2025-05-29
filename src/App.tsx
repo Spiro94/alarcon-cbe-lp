@@ -4,8 +4,8 @@ import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Services from "./components/Services";
 import Testimonials from "./components/Testimonials";
-import WhatsAppFloat from "./components/WhatsAppFloat";
 import { Toaster } from "./components/ui/sonner";
+import WhatsAppFloat from "./components/WhatsAppFloat";
 
 function App() {
 
