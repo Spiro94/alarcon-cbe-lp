@@ -101,11 +101,11 @@ const ContactSection = () => {
                   ayudarte a alcanzar tus objetivos de bienestar.
                 </p>
                 <Button
-                  className="bg-white text-teal-600 hover:bg-gray-100 font-semibold cursor-pointer"
+                  className="bg-white text-teal-600 p-8 rounded-xl hover:bg-gray-100 font-semibold cursor-pointer text-lg"
                   onClick={handleWhatsAppContact}
                 >
                   <img
-                    src="/logo_wtp_green.svg" className="h-6" />
+                    src="/logo_wtp_green.svg" className="h-9" />
                   Contactar por WhatsApp
                 </Button>
               </CardContent>
