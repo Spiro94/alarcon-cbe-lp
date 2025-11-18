@@ -6,12 +6,14 @@ import Services from "./components/Services";
 import Testimonials from "./components/Testimonials";
 import { Toaster } from "./components/ui/sonner";
 import WhatsAppFloat from "./components/WhatsAppFloat";
+import Navbar from "./components/Navbar";
 
 function App() {
 
 
   return (
     <div className="min-h-svh">
+      <Navbar />
       <Hero />
       <Services />
       <Benefits />
