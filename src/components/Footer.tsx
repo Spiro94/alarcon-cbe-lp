@@ -77,6 +77,17 @@ const Footer = () => (
             ))}
           </ul>
         </div>
+        <p className="mt-4 text-center text-sm text-gray-300 md:text-left">
+          Creado por{" "}
+          <a
+            href="https://danielvillamizar.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-teal-300 underline-offset-4 hover:underline"
+          >
+            Daniel Villamizar<span className="sr-only"> (se abre en una pestaña nueva)</span>
+          </a>
+        </p>
       </div>
     </div>
   </footer>
