@@ -55,10 +55,10 @@ export const SERVICES: Service[] = [
     ],
     metaTitle: "Educación Especial e Inclusiva en Piedecuesta | Alarcón CBE",
     metaDescription:
-      "Apoyo en educación especial e inclusiva para niños y adolescentes en Piedecuesta, Santander. Estrategias personalizadas para familias y colegios. Agenda tu cita.",
+      "Educación especial e inclusiva en Piedecuesta, Santander, con una Magíster en Educación Especial. Estrategias para niños, familias y colegios. Agenda tu cita.",
     h1: "Educación especial e inclusiva en Piedecuesta, Santander",
     intro:
-      "En Alarcón CBE acompañamos a niños, niñas y adolescentes con necesidades educativas especiales, y a sus familias y colegios, para que cada estudiante aprenda y participe desde sus fortalezas. Trabajamos con planes individualizados, respeto por el ritmo de cada persona y un enfoque cálido.",
+      "En Alarcón CBE, de la mano de una trabajadora social Magíster en Educación Especial, acompañamos a niños, niñas y adolescentes con necesidades educativas especiales, y a sus familias y colegios, para que cada estudiante aprenda y participe desde sus fortalezas. Trabajamos con planes individualizados, respeto por el ritmo de cada persona y un enfoque cálido.",
     audience: [
       "Niños, niñas y adolescentes con dificultades de aprendizaje, TDAH, autismo (TEA) u otras condiciones del desarrollo.",
       "Familias que buscan herramientas prácticas para apoyar a sus hijos en casa.",
@@ -209,9 +209,34 @@ export const businessJsonLd = {
   })),
 };
 
-// Owner: replace with the real bio, professional title/card number and a photo when available.
+// Content sourced from Laura's CV (public-safe details only). Add `photo` (e.g. "/laura.webp") when available.
 export const TEAM = {
-  name: "Laura",
-  role: "Trabajadora social",
-  bio: "Acompaña a niños, adolescentes, adultos, parejas y familias desde el respeto y la empatía, con terapia de pareja y asesorías orientadas a fortalecer vínculos, comunicación y bienestar emocional.",
+  name: "Laura Carolina Alarcón Blanco",
+  role: "Trabajadora Social · Magíster en Educación Especial",
+  photo: undefined as string | undefined,
+  bio: "Trabajadora Social y Magíster en Educación Especial, comprometida con el trabajo comunitario y educativo. Acompaña a niños, adolescentes, adultos, parejas y familias con un enfoque humanista, promoviendo la inclusión, la atención a personas con discapacidad y la resolución de conflictos para mejorar la calidad de vida y el bienestar emocional.",
+  education: [
+    { title: "Magíster en Educación Especial", place: "Universidad Europea de Madrid", years: "2023 - 2024" },
+    { title: "Trabajadora Social", place: "Universidad Industrial de Santander", years: "2011 - 2017" },
+  ],
+  experience: [
+    "Coordinación metodológica del programa Generaciones con Bienestar (ICBF) en Santander",
+    "Trabajo social en la Alcaldía de Bucaramanga y en el Centro Vida La Paz, con adultos mayores y sus familias",
+    "Promotora social en GOAL Colombia, fortaleciendo organizaciones comunitarias",
+    "Evaluación de primera infancia en Carmen de Bolívar, La Guajira y Cartagena",
+  ],
+  focus: ["Inclusión", "Discapacidad", "Intervención comunitaria", "Enfoque de género", "Resolución de conflictos"],
+};
+
+export const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: TEAM.name,
+  jobTitle: "Trabajadora Social",
+  worksFor: { "@id": `${SITE.url}/#organization` },
+  alumniOf: [
+    { "@type": "CollegeOrUniversity", name: "Universidad Europea de Madrid" },
+    { "@type": "CollegeOrUniversity", name: "Universidad Industrial de Santander" },
+  ],
+  knowsAbout: TEAM.focus,
 };
