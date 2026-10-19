@@ -16,8 +16,13 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://alarconcbe.com/terapia-individual</loc>
+    <loc>https://alarconcbe.com/asesorias-individuales</loc>
     <lastmod>2026-10-19</lastmod>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alarconcbe.com/politica-de-privacidad</loc>
+    <lastmod>2026-10-19</lastmod>
+    <priority>0.3</priority>
   </url>
 </urlset>

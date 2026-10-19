@@ -68,7 +68,7 @@ const Footer = () => (
             &copy; {new Date().getFullYear()} <span className="font-semibold text-teal-300">Alarcón CBE</span> - Centro de Bienestar Emocional. Todos los derechos reservados.
           </p>
           <ul className="flex gap-6 text-sm">
-            {[["/#services", "Servicios"], ["/#benefits", "Resultados"], ["/#contact", "Contacto"]].map(([href, label]) => (
+            {[["/#services", "Servicios"], ["/#about", "Nosotros"], ["/#benefits", "Resultados"], ["/#contact", "Contacto"], ["/politica-de-privacidad", "Privacidad"]].map(([href, label]) => (
               <li key={href}>
                 <a href={href} className="inline-block py-2 text-gray-300 transition-colors hover:text-teal-300">
                   {label}

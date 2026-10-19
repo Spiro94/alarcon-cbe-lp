@@ -99,8 +99,8 @@ export const SERVICES: Service[] = [
     ],
     metaTitle: "Terapia de Pareja y Familiar en Piedecuesta | Alarcón CBE",
     metaDescription:
-      "Terapia de pareja y terapia familiar en Piedecuesta, Santander. Mejora la comunicación, supera crisis y duelos en un espacio seguro y respetuoso. Agenda tu cita.",
-    h1: "Terapia de pareja y terapia familiar en Piedecuesta, Santander",
+      "Terapia de pareja y asesoría familiar en Piedecuesta, Santander. Mejora la comunicación, supera crisis y duelos en un espacio seguro y respetuoso. Agenda tu cita.",
+    h1: "Terapia de pareja y asesoría familiar en Piedecuesta, Santander",
     intro:
       "La terapia de pareja y familiar de Alarcón CBE ofrece un espacio neutral y seguro para hablar de lo que cuesta, escucharse de nuevo y construir acuerdos. Te acompañamos en conflictos, cambios de etapa, duelos y crisis, desde el respeto y la empatía.",
     audience: [
@@ -130,33 +130,33 @@ export const SERVICES: Service[] = [
     ],
   },
   {
-    slug: "terapia-individual",
+    slug: "asesorias-individuales",
     icon: "user",
-    title: "Acompañamiento Individual",
-    tagline: "Te escuchamos, te cuidamos, te acompañamos",
+    title: "Asesorías y Acompañamiento Individual",
+    tagline: "Te escuchamos, te orientamos, te acompañamos",
     gradient: "from-purple-200 to-pink-200 dark:from-purple-900 dark:to-pink-900",
     features: [
-      "Sesiones personalizadas para trabajar emociones, ansiedad o autoestima",
-      "Estrategias de afrontamiento para momentos difíciles",
+      "Asesorías personalizadas para trabajar emociones, estrés y autoestima",
+      "Orientación y estrategias para afrontar momentos difíciles",
       "Acompañamiento respetuoso desde la infancia hasta la adultez",
       "Espacios de confianza para conectar contigo mismo",
     ],
-    metaTitle: "Psicólogo y Terapia Individual en Piedecuesta | Alarcón CBE",
+    metaTitle: "Asesorías y Acompañamiento Emocional en Piedecuesta | Alarcón CBE",
     metaDescription:
-      "Terapia psicológica individual para niños, adolescentes y adultos en Piedecuesta, Santander. Ansiedad, autoestima y manejo emocional. Agenda tu primera sesión.",
-    h1: "Psicólogo y terapia individual en Piedecuesta, Santander",
+      "Asesorías individuales y acompañamiento emocional con trabajo social en Piedecuesta, Santander. Orientación para niños, adolescentes y adultos. Agenda tu cita.",
+    h1: "Asesorías y acompañamiento emocional en Piedecuesta, Santander",
     intro:
-      "El acompañamiento individual en Alarcón CBE es un espacio confidencial para trabajar tus emociones a tu ritmo. Atendemos a niños, adolescentes y adultos que necesitan manejar la ansiedad, fortalecer la autoestima o encontrar estrategias para momentos difíciles.",
+      "Las asesorías individuales de Alarcón CBE son un espacio confidencial, guiado por trabajo social, para entender lo que estás viviendo y encontrar caminos a tu ritmo. Orientamos a niños, adolescentes y adultos que quieren manejar el estrés, fortalecer la autoestima o tomar decisiones en momentos difíciles.",
     audience: [
-      "Adultos con ansiedad, estrés, tristeza persistente o baja autoestima.",
-      "Adolescentes que atraviesan cambios emocionales, escolares o sociales.",
-      "Niños con dificultades para expresar o regular sus emociones.",
+      "Adultos que atraviesan estrés, cambios o momentos de incertidumbre y buscan orientación.",
+      "Adolescentes con cambios emocionales, escolares o sociales.",
+      "Niños y familias que necesitan apoyo para expresar y regular emociones.",
     ],
     process: [
-      "Primera sesión para escucharte y definir qué quieres trabajar.",
-      "Plan de acompañamiento con objetivos claros y realistas.",
-      "Sesiones periódicas con estrategias de afrontamiento y regulación emocional.",
-      "Seguimiento de avances y cierre acordado contigo.",
+      "Primera conversación para escucharte y definir qué quieres trabajar.",
+      "Plan de asesoría con objetivos claros y realistas.",
+      "Sesiones periódicas con estrategias de afrontamiento y orientación.",
+      "Seguimiento de avances y, si hace falta, remisión a otros profesionales.",
     ],
     faqs: [
       {
@@ -164,12 +164,12 @@ export const SERVICES: Service[] = [
         a: "Sí. Lo que se conversa en sesión es confidencial, dentro de los límites éticos y legales de la práctica profesional.",
       },
       {
-        q: "¿Cómo sé si necesito terapia?",
-        a: "Si una emoción o situación te está afectando en el día a día, hablar con un profesional puede ayudarte. La primera conversación es para orientarte, sin compromiso.",
+        q: "¿Cómo sé si necesito una asesoría?",
+        a: "Si una situación te está afectando en el día a día, conversar con una profesional puede ayudarte. La primera conversación es para orientarte, sin compromiso.",
       },
       {
-        q: "¿Atienden niños?",
-        a: "Sí, acompañamos desde la infancia hasta la adultez con enfoques adaptados a cada edad.",
+        q: "¿Qué pasa si necesito otro tipo de atención?",
+        a: "Si tu caso requiere atención médica o de otra especialidad, te orientamos y te remitimos a los profesionales adecuados.",
       },
     ],
   },
@@ -179,7 +179,7 @@ export const getService = (slug: string) => SERVICES.find((s) => s.slug === slug
 
 export const businessJsonLd = {
   "@context": "https://schema.org",
-  "@type": ["LocalBusiness", "MedicalBusiness"],
+  "@type": ["LocalBusiness", "ProfessionalService"],
   "@id": `${SITE.url}/#organization`,
   name: SITE.legalName,
   alternateName: SITE.name,
@@ -187,7 +187,7 @@ export const businessJsonLd = {
   logo: `${SITE.url}/main_logo.webp`,
   image: SITE.ogImage,
   description:
-    "Centro de bienestar emocional en Piedecuesta, Santander: educación especial e inclusiva, terapia de pareja y familiar, y acompañamiento psicológico individual.",
+    "Centro de bienestar emocional en Piedecuesta, Santander: educación especial e inclusiva, terapia de pareja y familiar, y asesorías individuales con trabajo social.",
   telephone: SITE.phone,
   email: SITE.email,
   address: {
@@ -207,4 +207,11 @@ export const businessJsonLd = {
     "@type": "Offer",
     itemOffered: { "@type": "Service", name: s.title, url: `${SITE.url}/${s.slug}` },
   })),
+};
+
+// Owner: replace with the real bio, professional title/card number and a photo when available.
+export const TEAM = {
+  name: "Laura",
+  role: "Trabajadora social",
+  bio: "Acompaña a niños, adolescentes, adultos, parejas y familias desde el respeto y la empatía, con terapia de pareja y asesorías orientadas a fortalecer vínculos, comunicación y bienestar emocional.",
 };

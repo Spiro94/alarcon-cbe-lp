@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { toast } from "sonner";
+import { Link } from "react-router-dom";
 import { Clock, Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -16,8 +17,7 @@ const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const validate = (v: Record<Fields, string>): Errors => {
   const e: Errors = {};
   if (!v.name.trim()) e.name = "Escribe tu nombre.";
-  if (!v.email.trim()) e.email = "Escribe tu correo electrónico.";
-  else if (!emailRe.test(v.email.trim())) e.email = "Revisa el formato del correo (ej. nombre@correo.com).";
+  if (v.email.trim() && !emailRe.test(v.email.trim())) e.email = "Revisa el formato del correo (ej. nombre@correo.com).";
   if (!v.message.trim()) e.message = "Cuéntanos brevemente cómo podemos ayudarte.";
   return e;
 };
@@ -50,14 +50,15 @@ const ContactSection = () => {
       return;
     }
 
-    const subject = encodeURIComponent("Consulta desde sitio web");
-    const body = encodeURIComponent(
-      `Nombre: ${values.name}\nCorreo: ${values.email}\nTeléfono: ${values.phone || "No indicado"}\n\nMensaje:\n${values.message}`,
-    );
-    window.location.href = `mailto:${SITE.email}?subject=${subject}&body=${body}`;
+    const text =
+      `Hola, quisiera agendar una consulta.\n\nNombre: ${values.name}\n` +
+      (values.email ? `Correo: ${values.email}\n` : "") +
+      (values.phone ? `Teléfono: ${values.phone}\n` : "") +
+      `\nMensaje:\n${values.message}`;
+    window.open(whatsappUrl(text), "_blank", "noopener,noreferrer");
 
-    toast.success("Abriendo tu aplicación de correo", {
-      description: `Revisa el mensaje y presiona enviar. Si no se abre, escríbenos a ${SITE.email} o por WhatsApp.`,
+    toast.success("Abriendo WhatsApp", {
+      description: "Revisa el mensaje y presiona enviar para escribirnos.",
     });
   };
 
@@ -144,20 +145,20 @@ const ContactSection = () => {
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-2xl text-foreground">
                 <Send aria-hidden className="size-6 text-primary" />
-                <h3>Envíanos un mensaje</h3>
+                <h3>Escríbenos por WhatsApp</h3>
               </CardTitle>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} noValidate className="space-y-5">
-                <p className="text-sm text-muted-foreground">Los campos con <span aria-hidden>*</span><span className="sr-only">asterisco</span> son obligatorios.</p>
+                <p className="text-sm text-muted-foreground">Los campos con <span aria-hidden>*</span><span className="sr-only">asterisco</span> son obligatorios. Al enviar, continuarás la conversación por WhatsApp.</p>
                 <div>
                   <Label htmlFor="name" className="font-semibold">Nombre completo *</Label>
                   <Input {...field("name")} required autoComplete="name" className={inputClass} placeholder="Tu nombre completo" />
                   {error("name")}
                 </div>
                 <div>
-                  <Label htmlFor="email" className="font-semibold">Correo electrónico *</Label>
-                  <Input {...field("email")} type="email" required autoComplete="email" className={inputClass} placeholder="tu@correo.com" />
+                  <Label htmlFor="email" className="font-semibold">Correo electrónico (opcional)</Label>
+                  <Input {...field("email")} type="email" autoComplete="email" className={inputClass} placeholder="tu@correo.com" />
                   {error("email")}
                 </div>
                 <div>
@@ -171,10 +172,10 @@ const ContactSection = () => {
                 </div>
                 <Button type="submit" className="h-14 w-full rounded-lg text-lg font-semibold shadow-lg">
                   <Send aria-hidden className="size-5" />
-                  Enviar mensaje
+                  Continuar por WhatsApp
                 </Button>
                 <p className="text-xs text-muted-foreground">
-                  Al enviar se abrirá tu aplicación de correo. Tus datos se usan únicamente para responder tu consulta.
+                  Tus datos se usan únicamente para responder tu consulta. Consulta nuestra <Link to="/politica-de-privacidad" className="underline underline-offset-4 hover:text-primary">política de privacidad</Link>.
                 </p>
               </form>
             </CardContent>

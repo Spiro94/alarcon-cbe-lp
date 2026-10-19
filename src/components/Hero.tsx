@@ -55,7 +55,7 @@ const Hero = () => {
         </div>
 
         <h1 id="hero-title" className="mb-6 text-4xl font-bold tracking-tight text-foreground md:text-6xl lg:text-7xl">
-          <span className="block">Acompañamiento psicológico</span>
+          <span className="block">Acompañamiento familiar y emocional</span>
           <span className="block">desde el amor y el</span>
           <span className="block min-h-[1.2em] bg-gradient-to-r from-teal-700 via-blue-700 to-purple-700 bg-clip-text pb-2 text-transparent dark:from-teal-300 dark:via-blue-300 dark:to-purple-300">
             <span className="sr-only">{fullText}</span>

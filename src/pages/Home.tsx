@@ -1,3 +1,4 @@
+import About from "@/components/About";
 import Benefits from "@/components/Benefits";
 import ContactSection from "@/components/ContactSection";
 import Hero from "@/components/Hero";
@@ -9,13 +10,14 @@ import { businessJsonLd } from "@/lib/site";
 const Home = () => (
   <>
     <Seo
-      title="Psicólogo y Bienestar Emocional en Piedecuesta | Alarcón CBE"
-      description="Centro de bienestar emocional en Piedecuesta, Santander: terapia de pareja y familiar, terapia individual y educación especial e inclusiva. Agenda tu cita."
+      title="Terapia de Pareja y Asesorías en Piedecuesta | Alarcón CBE"
+      description="Centro de bienestar emocional en Piedecuesta, Santander: terapia de pareja, asesoría familiar e individual y educación inclusiva con trabajo social. Agenda tu cita."
       path="/"
       jsonLd={[businessJsonLd]}
     />
     <Hero />
     <Services />
+    <About />
     <Benefits />
     <Testimonials />
     <ContactSection />
