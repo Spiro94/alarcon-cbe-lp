@@ -1,112 +1,109 @@
-import { useState, useEffect } from 'react';
-import { Button } from "@/components/ui/button";
+import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import ThemeToggle from "@/components/ThemeToggle";
+
+const links = [
+  { href: "/#services", label: "Servicios" },
+  { href: "/#benefits", label: "Resultados" },
+  { href: "/#testimonials", label: "Testimonios" },
+];
 
 const Navbar = () => {
-    const [isScrolled, setIsScrolled] = useState(false);
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+  const toggleRef = useRef<HTMLButtonElement>(null);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
-        };
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 50);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
-    const scrollToSection = (id: string) => {
-        setIsMobileMenuOpen(false);
-        const element = document.getElementById(id);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setOpen(false);
+        toggleRef.current?.focus();
+      }
     };
+    const mq = window.matchMedia("(min-width: 768px)");
+    const onChange = () => mq.matches && setOpen(false);
+    document.addEventListener("keydown", onKey);
+    mq.addEventListener("change", onChange);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      mq.removeEventListener("change", onChange);
+    };
+  }, [open]);
 
-    return (
-        <nav
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/80 backdrop-blur-md shadow-md py-4' : 'bg-transparent py-6'
-                }`}
+  const linkClass =
+    "rounded-md px-1 py-2 font-medium text-foreground/80 transition-colors hover:text-primary";
+
+  return (
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        isScrolled || open
+          ? "bg-background/90 py-3 shadow-md backdrop-blur-md"
+          : "bg-transparent py-5"
+      }`}
+    >
+      <nav aria-label="Principal" className="container mx-auto flex items-center justify-between px-4">
+        <Link to="/" className="rounded-md text-xl font-bold text-primary" onClick={() => setOpen(false)}>
+          Alarcón CBE
+        </Link>
+
+        <div className="hidden items-center gap-6 md:flex">
+          {links.map((l) => (
+            <a key={l.href} href={l.href} className={linkClass}>
+              {l.label}
+            </a>
+          ))}
+          <ThemeToggle />
+          <Button asChild className="rounded-full px-6">
+            <a href="/#contact">Agendar cita</a>
+          </Button>
+        </div>
+
+        <div className="flex items-center gap-1 md:hidden">
+          <ThemeToggle />
+          <Button
+            ref={toggleRef}
+            variant="ghost"
+            size="icon"
+            className="size-11"
+            aria-label={open ? "Cerrar menú" : "Abrir menú"}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            onClick={() => setOpen(!open)}
+          >
+            {open ? <X aria-hidden /> : <Menu aria-hidden />}
+          </Button>
+        </div>
+      </nav>
+
+      {open && (
+        <div
+          id="mobile-menu"
+          className="absolute left-0 right-0 top-full flex animate-in flex-col gap-2 border-t bg-background p-4 shadow-lg slide-in-from-top-5 md:hidden"
         >
-            <div className="container mx-auto px-4 flex items-center justify-between">
-                <div
-                    className="flex items-center gap-2 cursor-pointer"
-                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                >
-                    {/* You can replace this with your logo image if you have a small version */}
-                    <span className={`text-xl font-bold ${isScrolled ? 'text-teal-800' : 'text-gray-800'}`}>
-                        Alarcón CBE
-                    </span>
-                </div>
-
-                {/* Desktop Menu */}
-                <div className="hidden md:flex items-center gap-8">
-                    <button
-                        onClick={() => scrollToSection('services')}
-                        className={`font-medium hover:text-teal-600 cursor-pointer transition-colors ${isScrolled ? 'text-gray-600' : 'text-gray-700'}`}
-                    >
-                        Servicios
-                    </button>
-                    <button
-                        onClick={() => scrollToSection('benefits')}
-                        className={`font-medium hover:text-teal-600 cursor-pointer transition-colors ${isScrolled ? 'text-gray-600' : 'text-gray-700'}`}
-                    >
-                        Resultados
-                    </button>
-                    <button
-                        onClick={() => scrollToSection('testimonials')}
-                        className={`font-medium hover:text-teal-600 cursor-pointer transition-colors ${isScrolled ? 'text-gray-600' : 'text-gray-700'}`}
-                    >
-                        Testimonios
-                    </button>
-                    <Button
-                        onClick={() => scrollToSection('contact')}
-                        className="bg-teal-600 hover:bg-teal-700 cursor-pointer text-white rounded-full px-6"
-                    >
-                        Agendar Cita
-                    </Button>
-                </div>
-
-                {/* Mobile Menu Button */}
-                <button
-                    className="md:hidden text-gray-800"
-                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                >
-                    {isMobileMenuOpen ? <X /> : <Menu />}
-                </button>
-            </div>
-
-            {/* Mobile Menu Overlay */}
-            {isMobileMenuOpen && (
-                <div className="absolute top-full left-0 right-0 bg-white shadow-lg p-4 md:hidden flex flex-col gap-4 animate-in slide-in-from-top-5">
-                    <button
-                        onClick={() => scrollToSection('services')}
-                        className="text-left py-2 text-gray-600 hover:text-teal-600 font-medium"
-                    >
-                        Servicios
-                    </button>
-                    <button
-                        onClick={() => scrollToSection('benefits')}
-                        className="text-left py-2 text-gray-600 hover:text-teal-600 font-medium"
-                    >
-                        Resultados
-                    </button>
-                    <button
-                        onClick={() => scrollToSection('testimonials')}
-                        className="text-left py-2 text-gray-600 hover:text-teal-600 font-medium"
-                    >
-                        Testimonios
-                    </button>
-                    <Button
-                        onClick={() => scrollToSection('contact')}
-                        className="w-full bg-teal-600 hover:bg-teal-700 text-white rounded-full"
-                    >
-                        Agendar Cita
-                    </Button>
-                </div>
-            )}
-        </nav>
-    );
+          {links.map((l) => (
+            <a key={l.href} href={l.href} className={`${linkClass} py-3`} onClick={() => setOpen(false)}>
+              {l.label}
+            </a>
+          ))}
+          <Button asChild className="h-12 w-full rounded-full">
+            <a href="/#contact" onClick={() => setOpen(false)}>
+              Agendar cita
+            </a>
+          </Button>
+        </div>
+      )}
+    </header>
+  );
 };
 
 export default Navbar;

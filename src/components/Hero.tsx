@@ -1,101 +1,90 @@
-import { Button } from "@/components/ui/button";
-import { ArrowDown } from "lucide-react";
 import { useEffect, useState } from "react";
+import { ArrowDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const fullText = "bienestar emocional";
 
 const Hero = () => {
-  const [text, setText] = useState("");
-  const fullText = "bienestar emocional";
+  const [text, setText] = useState(fullText);
 
   useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     let index = 0;
+    setText("");
     const interval = setInterval(() => {
-      setText(fullText.slice(0, index));
       index++;
-      if (index > fullText.length) {
-        clearInterval(interval);
-      }
-    }, 100);
+      setText(fullText.slice(0, index));
+      if (index >= fullText.length) clearInterval(interval);
+    }, 90);
     return () => clearInterval(interval);
   }, []);
 
-  const scrollToServices = () => {
-    document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const scrollToContact = () => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background with gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-teal-50 via-white to-blue-50 z-0"></div>
+    <section
+      aria-labelledby="hero-title"
+      className="relative flex min-h-svh items-center justify-center overflow-hidden"
+    >
+      <div className="absolute inset-0 bg-gradient-to-br from-teal-50 via-background to-blue-50 dark:from-teal-950/60 dark:via-background dark:to-blue-950/50" aria-hidden />
 
-      {/* Decorative background elements */}
-      <div className="absolute inset-0 overflow-hidden z-0">
-        <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-teal-200/20 blur-3xl animate-pulse"></div>
-        <div className="absolute top-1/3 -left-20 w-72 h-72 rounded-full bg-blue-200/20 blur-3xl animate-pulse delay-700"></div>
-        <div className="absolute -bottom-40 right-1/3 w-80 h-80 rounded-full bg-purple-200/20 blur-3xl animate-pulse delay-1000"></div>
-
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0 opacity-10 mix-blend-multiply">
-          <img src="/bg_img.jpg" className="w-full h-full object-cover" alt="Background pattern" />
-        </div>
+      <div className="absolute inset-0 overflow-hidden" aria-hidden>
+        <div className="absolute -right-40 -top-40 size-96 rounded-full bg-teal-200/30 blur-3xl dark:bg-teal-500/10" />
+        <div className="absolute -left-20 top-1/3 size-72 rounded-full bg-blue-200/30 blur-3xl dark:bg-blue-500/10" />
+        <div className="absolute -bottom-40 right-1/3 size-80 rounded-full bg-purple-200/30 blur-3xl dark:bg-purple-500/10" />
+        <img
+          src="/bg_img.webp"
+          alt=""
+          width={1280}
+          height={960}
+          decoding="async"
+          className="absolute inset-0 size-full object-cover opacity-10 mix-blend-multiply dark:opacity-5 dark:mix-blend-screen"
+        />
       </div>
 
-      <div className="container mx-auto px-4 text-center relative z-10 pt-20">
-        {/* Logo with float animation */}
-        <div className="mb-12 flex justify-center animate-in fade-in zoom-in duration-1000">
-          <div className="relative">
-            <div className="absolute inset-0 bg-teal-400/20 blur-xl rounded-full transform scale-110"></div>
+      <div className="container relative z-10 mx-auto px-4 pb-10 pt-28 text-center">
+        <div className="mb-10 flex justify-center animate-in fade-in zoom-in duration-1000">
+          <div className="rounded-3xl p-3 dark:bg-white/95">
             <img
-              src="/main_logo.png"
+              src="/main_logo.webp"
               alt="Alarcón CBE - Centro de Bienestar Emocional"
-              className="h-32 md:h-48 object-contain relative z-10 drop-shadow-xl"
+              width={640}
+              height={225}
+              fetchPriority="high"
+              className="h-24 w-auto object-contain md:h-40"
             />
           </div>
         </div>
 
-        {/* Main headline */}
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-800 mb-8 tracking-tight">
-          <span className="block mb-6 animate-in slide-in-from-bottom-5 duration-700">Acompañando vidas</span>
-          <span className="block mb-6 animate-in slide-in-from-bottom-5 duration-700 delay-200">desde el amor y el</span>
-          <span className="bg-gradient-to-r from-teal-600 via-blue-600 to-purple-600 bg-clip-text text-transparent h-20 block min-h-[1.2em]">
-            {text}<span className="animate-pulse">|</span>
+        <h1 id="hero-title" className="mb-6 text-4xl font-bold tracking-tight text-foreground md:text-6xl lg:text-7xl">
+          <span className="block">Acompañamiento psicológico</span>
+          <span className="block">desde el amor y el</span>
+          <span className="block min-h-[1.2em] bg-gradient-to-r from-teal-700 via-blue-700 to-purple-700 bg-clip-text pb-2 text-transparent dark:from-teal-300 dark:via-blue-300 dark:to-purple-300">
+            <span className="sr-only">{fullText}</span>
+            <span aria-hidden>
+              {text}
+              <span className="animate-pulse">|</span>
+            </span>
           </span>
         </h1>
 
-        {/* Subheadline */}
-        <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed animate-in fade-in slide-in-from-bottom-4 duration-700 delay-500">
-          En Alarcón CBE brindamos un refugio terapéutico para
-          <span className="font-semibold text-teal-700"> niños, adolescentes, adultos y familias</span>.
+        <p className="mx-auto mb-4 max-w-3xl text-lg leading-relaxed text-muted-foreground md:text-xl">
+          En Alarcón CBE, en Piedecuesta, Santander, ofrecemos un refugio terapéutico para{" "}
+          <strong className="font-semibold text-primary">niños, adolescentes, adultos, parejas y familias</strong>.
           Un espacio seguro para sanar, crecer y florecer.
         </p>
+        <p className="mb-10 text-sm text-muted-foreground">Atención de lunes a viernes, 8:00 AM - 6:00 PM</p>
 
-        {/* CTA buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-700">
-          <Button
-            onClick={scrollToContact}
-            className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-6 rounded-full text-lg font-semibold shadow-lg hover:shadow-teal-500/30 transition-all duration-300 hover:-translate-y-1 cursor-pointer"
-          >
-            Agenda tu consulta hoy
+        <div className="mb-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <Button asChild size="lg" className="h-14 rounded-full px-8 text-lg font-semibold shadow-lg">
+            <a href="#contact">Agenda tu consulta hoy</a>
           </Button>
-          <Button
-            variant="outline"
-            onClick={scrollToServices}
-            className="border-2 border-teal-600 text-teal-700 hover:bg-teal-50 px-8 py-6 rounded-full text-lg font-semibold transition-all duration-300 hover:-translate-y-1 cursor-pointer"
-          >
-            Conoce nuestros servicios
+          <Button asChild variant="outline" size="lg" className="h-14 rounded-full border-2 border-primary px-8 text-lg font-semibold text-primary">
+            <a href="#services">Conoce nuestros servicios</a>
           </Button>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="animate-bounce delay-1000">
-          <ArrowDown
-            className="w-8 h-8 text-teal-600 mx-auto cursor-pointer hover:text-teal-700 transition-colors"
-            onClick={scrollToServices}
-          />
-        </div>
+        <a href="#services" aria-label="Ir a servicios" className="inline-flex rounded-full p-2 text-primary motion-safe:animate-bounce">
+          <ArrowDown className="size-8" aria-hidden />
+        </a>
       </div>
     </section>
   );
