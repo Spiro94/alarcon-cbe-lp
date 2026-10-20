@@ -10,8 +10,8 @@ import { businessJsonLd, personJsonLd } from "@/lib/site";
 const Home = () => (
   <>
     <Seo
-      title="Terapia de Pareja y Asesorías en Piedecuesta | Alarcón CBE"
-      description="Centro de bienestar emocional en Piedecuesta, Santander: terapia de pareja, asesoría familiar e individual y educación inclusiva con trabajo social. Agenda tu cita."
+      title="Educación Inclusiva y Asesorías para Niños en Piedecuesta | Alarcón CBE"
+      description="Centro de bienestar emocional en Piedecuesta, Santander: educación especial e inclusiva para niños, asesorías a familias y acompañamiento emocional con trabajo social. Agenda tu cita."
       path="/"
       jsonLd={[businessJsonLd, personJsonLd]}
     />

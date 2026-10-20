@@ -187,7 +187,7 @@ export const businessJsonLd = {
   logo: `${SITE.url}/main_logo.webp`,
   image: SITE.ogImage,
   description:
-    "Centro de bienestar emocional en Piedecuesta, Santander: educación especial e inclusiva, terapia de pareja y familiar, y asesorías individuales con trabajo social.",
+    "Centro de bienestar emocional en Piedecuesta, Santander: educación especial e inclusiva para niños, asesorías a familias e individuales, y acompañamiento con trabajo social.",
   telephone: SITE.phone,
   email: SITE.email,
   address: {

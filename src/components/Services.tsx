@@ -16,7 +16,7 @@ const Services = () => (
     <div className="container relative mx-auto px-4">
       <div className="mx-auto mb-16 max-w-3xl text-center">
         <h2 id="services-title" className="mb-4 text-3xl font-bold text-foreground md:text-4xl">
-          Terapia de pareja, asesorías y bienestar emocional en Piedecuesta
+          Educación inclusiva, asesorías y bienestar emocional para niños en Piedecuesta
         </h2>
         <p className="mb-3 text-lg text-muted-foreground">
           Ofrecemos espacios seguros, amorosos y profesionales donde las emociones pueden ser expresadas, comprendidas y transformadas.
