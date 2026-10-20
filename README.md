@@ -19,7 +19,7 @@ smooth user experience.
   that directs users to WhatsApp.
 - **Services Section:** Highlights the different services offered, such as:
   - Educación Especial e Inclusiva
-  - Terapia de Pareja y Familiar
+  - Asesoría de Pareja y Familiar
   - Acompañamiento Individual
 - **(Future Sections):** Placeholder for "Quienes Somos" (About Us) and
   "Contacto" (Contact) sections.

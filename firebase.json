@@ -3,6 +3,9 @@
     "public": "dist",
     "cleanUrls": true,
     "trailingSlash": false,
+    "redirects": [
+      { "source": "/terapia-pareja-familiar", "destination": "/asesoria-pareja-familiar", "type": 301 }
+    ],
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "headers": [
       {

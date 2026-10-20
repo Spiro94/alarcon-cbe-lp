@@ -22,7 +22,7 @@ const Services = () => (
           Ofrecemos espacios seguros, amorosos y profesionales donde las emociones pueden ser expresadas, comprendidas y transformadas.
         </p>
         <p className="text-lg text-muted-foreground">
-          Nuestro equipo interdisciplinario trabaja con niños, adolescentes, adultos, familias y parejas, adaptando cada intervención a sus necesidades.
+          Acompañamos a niños, adolescentes, adultos, familias y parejas con un trabajo profesional y personalizado, adaptado a las necesidades de cada persona.
         </p>
       </div>
 

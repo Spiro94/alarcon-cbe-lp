@@ -67,7 +67,7 @@ const Hero = () => {
         </h1>
 
         <p className="mx-auto mb-4 max-w-3xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-          En Alarcón CBE, en Piedecuesta, Santander, ofrecemos un refugio terapéutico para{" "}
+          En Alarcón CBE, en Piedecuesta, Santander, ofrecemos un espacio de acompañamiento para{" "}
           <strong className="font-semibold text-primary">niños, adolescentes, adultos, parejas y familias</strong>.
           Un espacio seguro para sanar, crecer y florecer.
         </p>

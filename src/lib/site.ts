@@ -11,6 +11,7 @@ export const SITE = {
   hours: "Lunes a Viernes: 8:00 AM - 6:00 PM",
   ogImage: "https://alarconcbe.com/og-image.png",
   areaServed: ["Piedecuesta", "Floridablanca", "Bucaramanga", "Girón"],
+  instagram: "https://www.instagram.com/alarconcbe/",
 } as const;
 
 export const WHATSAPP_MESSAGE =
@@ -86,9 +87,9 @@ export const SERVICES: Service[] = [
     ],
   },
   {
-    slug: "terapia-pareja-familiar",
+    slug: "asesoria-pareja-familiar",
     icon: "heart",
-    title: "Terapia de Pareja y Familiar",
+    title: "Asesoría de Pareja y Familiar",
     tagline: "Donde la comunicación sana fortalece los lazos",
     gradient: "from-blue-200 to-indigo-200 dark:from-blue-900 dark:to-indigo-900",
     features: [
@@ -97,12 +98,12 @@ export const SERVICES: Service[] = [
       "Apoyo en momentos de crisis, duelos o cambios importantes",
       "Intervención desde el respeto y la empatía",
     ],
-    metaTitle: "Terapia de Pareja y Familiar en Piedecuesta | Alarcón CBE",
+    metaTitle: "Asesoría de Pareja y Familiar en Piedecuesta | Alarcón CBE",
     metaDescription:
-      "Terapia de pareja y asesoría familiar en Piedecuesta, Santander. Mejora la comunicación, supera crisis y duelos en un espacio seguro y respetuoso. Agenda tu cita.",
-    h1: "Terapia de pareja y asesoría familiar en Piedecuesta, Santander",
+      "Asesoría de pareja y orientación familiar con trabajo social en Piedecuesta, Santander. Mejora la comunicación, supera crisis y duelos en un espacio seguro y respetuoso. Agenda tu cita.",
+    h1: "Asesoría de pareja y orientación familiar en Piedecuesta, Santander",
     intro:
-      "La terapia de pareja y familiar de Alarcón CBE ofrece un espacio neutral y seguro para hablar de lo que cuesta, escucharse de nuevo y construir acuerdos. Te acompañamos en conflictos, cambios de etapa, duelos y crisis, desde el respeto y la empatía.",
+      "La asesoría de pareja y familiar de Alarcón CBE, guiada por trabajo social, ofrece un espacio neutral y seguro para hablar de lo que cuesta, escucharse de nuevo y construir acuerdos. Te acompañamos en conflictos, cambios de etapa, duelos y crisis, desde el respeto y la empatía.",
     audience: [
       "Parejas con conflictos de comunicación, desconfianza o cambios importantes en su relación.",
       "Familias que atraviesan crisis, separaciones, duelos o dificultades de convivencia.",
@@ -120,7 +121,7 @@ export const SERVICES: Service[] = [
         a: "No siempre. Definimos juntos quién participa en cada sesión según los objetivos del proceso.",
       },
       {
-        q: "¿Cuánto dura un proceso de terapia de pareja?",
+        q: "¿Cuánto dura un proceso de asesoría de pareja?",
         a: "Depende de cada caso. En la primera sesión hablamos de objetivos y proponemos un plan con revisiones periódicas.",
       },
       {
@@ -197,6 +198,7 @@ export const businessJsonLd = {
     addressCountry: "CO",
   },
   areaServed: SITE.areaServed.map((name) => ({ "@type": "City", name })),
+  sameAs: [SITE.instagram],
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
     dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],

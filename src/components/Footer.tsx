@@ -1,4 +1,4 @@
-import { Heart, Mail, MapPin, Phone } from "lucide-react";
+import { Heart, Instagram, Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import { SERVICES, SITE } from "@/lib/site";
 
@@ -22,7 +22,7 @@ const Footer = () => (
             />
           </div>
           <p className="mb-6 leading-relaxed text-gray-300">
-            Centro especializado en acompañamiento terapéutico para niños, adolescentes, adultos, parejas y familias, con un enfoque cálido, personalizado e inclusivo en {SITE.city}, {SITE.region}.
+            Centro de bienestar emocional que acompaña a niños, adolescentes, adultos, parejas y familias, con un enfoque cálido, personalizado e inclusivo en {SITE.city}, {SITE.region}.
           </p>
           <p className="flex items-center gap-2 text-sm font-semibold text-teal-300">
             <Heart aria-hidden className="size-5" />
@@ -58,6 +58,10 @@ const Footer = () => (
               <Mail aria-hidden className="mt-1 size-5 shrink-0 text-teal-300" />
               {SITE.email}
             </a>
+            <a href={SITE.instagram} target="_blank" rel="noopener noreferrer" className={`flex items-start gap-3 ${linkClass}`}>
+              <Instagram aria-hidden className="mt-1 size-5 shrink-0 text-teal-300" />
+              @alarconcbe<span className="sr-only"> en Instagram (se abre en una pestaña nueva)</span>
+            </a>
           </address>
         </div>
       </div>
@@ -68,7 +72,7 @@ const Footer = () => (
             &copy; {new Date().getFullYear()} <span className="font-semibold text-teal-300">Alarcón CBE</span> - Centro de Bienestar Emocional. Todos los derechos reservados.
           </p>
           <ul className="flex gap-6 text-sm">
-            {[["/#services", "Servicios"], ["/#about", "Nosotros"], ["/#benefits", "Resultados"], ["/#contact", "Contacto"], ["/politica-de-privacidad", "Privacidad"]].map(([href, label]) => (
+            {[["/#services", "Servicios"], ["/#about", "Nosotros"], ["/#benefits", "Qué trabajamos"], ["/#contact", "Contacto"], ["/politica-de-privacidad", "Privacidad"]].map(([href, label]) => (
               <li key={href}>
                 <a href={href} className="inline-block py-2 text-gray-300 transition-colors hover:text-teal-300">
                   {label}
